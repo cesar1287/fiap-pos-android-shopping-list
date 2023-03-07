@@ -1,4 +1,4 @@
-package com.github.cesar1287.lembretedecompras
+package com.github.cesar1287.lembretedecompras.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
