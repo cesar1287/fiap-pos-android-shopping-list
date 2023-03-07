@@ -2,12 +2,12 @@ package com.github.cesar1287.lembretedecompras
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.github.cesar1287.lembretedecompras.databinding.ActivityMainBinding
+import com.github.cesar1287.lembretedecompras.databinding.ActivityLoginBinding
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
-    private val binding: ActivityMainBinding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
+    private val binding: ActivityLoginBinding by lazy {
+        ActivityLoginBinding.inflate(layoutInflater)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
