@@ -30,6 +30,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        loginViewModel.getLoggedUser()
+
         initAnimation()
 
         hideKeyboard()
@@ -79,6 +81,19 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
+
+        loginViewModel.loggedUserState.observe(this) {
+            when (it) {
+                is RequestState.Success -> {
+                    binding.etEmail.setText(it.data)
+                }
+                is RequestState.Error -> {
+                }
+                is RequestState.Loading -> {
+                }
+            }
+        }
+
     }
 
 
