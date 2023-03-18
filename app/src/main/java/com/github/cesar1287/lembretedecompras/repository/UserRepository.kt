@@ -1,6 +1,5 @@
 package com.github.cesar1287.lembretedecompras.repository
 
-import android.app.Application
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import androidx.lifecycle.LiveData

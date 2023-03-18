@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.cesar1287.lembretedecompras.databinding.ActivityMainBinding
 import com.github.cesar1287.lembretedecompras.model.Product
@@ -22,7 +21,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val mainListAdapter: MainListAdapter by lazy {
-        MainListAdapter()
+        MainListAdapter {
+            mainViewModel.delete(it)
+        }
     }
 
     private val newProductRequest =

@@ -13,4 +13,13 @@ class ProductRepository(
     suspend fun insert(product: Product) {
         productDAO.insert(product)
     }
+
+    suspend fun delete(product: Product) {
+        productDAO.delete(product)
+    }
+
+    suspend fun deleteByProductName(productName: String) {
+        productDAO.deleteByProductName(productName)
+    }
+
 }

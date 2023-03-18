@@ -1,10 +1,7 @@
 package com.github.cesar1287.lembretedecompras.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.github.cesar1287.lembretedecompras.model.Product
 
 @Dao
@@ -18,5 +15,11 @@ interface ProductDAO {
 
     @Query("DELETE FROM product")
     suspend fun deleteAll()
+
+    @Delete
+    suspend fun delete(product: Product)
+
+    @Query("DELETE FROM product WHERE product_name = :productName")
+    suspend fun deleteByProductName(productName: String)
 
 }

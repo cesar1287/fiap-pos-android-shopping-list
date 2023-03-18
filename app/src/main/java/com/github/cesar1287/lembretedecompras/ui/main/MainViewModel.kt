@@ -28,4 +28,15 @@ class MainViewModel(
         viewModelScope.launch(Dispatchers.IO) {
             productRepository.insert(product)
         }
+
+    fun delete(product: Product) =
+        viewModelScope.launch(Dispatchers.IO) {
+            productRepository.delete(product)
+        }
+
+    fun delete(productName: String) =
+        viewModelScope.launch(Dispatchers.IO) {
+            productRepository.deleteByProductName(productName)
+        }
+
 }
