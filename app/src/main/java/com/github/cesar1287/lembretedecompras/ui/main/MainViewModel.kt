@@ -39,4 +39,8 @@ class MainViewModel(
             productRepository.deleteByProductName(productName)
         }
 
+    fun deleteAll() =
+        viewModelScope.launch(Dispatchers.IO) {
+            productRepository.deleteAll()
+        }
 }

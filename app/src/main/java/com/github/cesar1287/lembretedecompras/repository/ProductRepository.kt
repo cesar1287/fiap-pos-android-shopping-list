@@ -22,4 +22,7 @@ class ProductRepository(
         productDAO.deleteByProductName(productName)
     }
 
+    suspend fun deleteAll() {
+        productDAO.deleteAll()
+    }
 }
